@@ -29,7 +29,7 @@ Skill Security Audit makes Claude check a skill before you install it. You get a
 ## How it works
 
 1. **Isolation.** The candidate is placed in an empty folder. Archives go through a safe extractor that refuses path traversal, symlinks and zip bombs. **Nothing from the candidate is ever executed.**
-2. **Automated triage.** A dependency-free Python scanner (`scripts/scan.py`) flags suspicious lines across 20+ risk categories and lists every domain the skill references.
+2. **Automated triage.** A dependency-free Python scanner (`references/scanner.md`) flags suspicious lines across 20+ risk categories and lists every domain the skill references.
 3. **Full manual review.** Claude reads every file, judges each finding in context and checks whether the behaviour matches the stated purpose.
 4. **Verdict and report** in your language, with file:line evidence.
 

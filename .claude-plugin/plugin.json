@@ -10,6 +10,18 @@
   "homepage": "https://github.com/doobyflink/skill-security-audit",
   "repository": "https://github.com/doobyflink/skill-security-audit",
   "license": "MIT",
-  "keywords": ["security", "audit", "skills", "plugins", "malware", "prompt-injection", "supply-chain", "crypto"],
-  "skills": ["./skills/skill-security-audit"]
+  "keywords": [
+    "security",
+    "audit",
+    "skills",
+    "plugins",
+    "malware",
+    "prompt-injection",
+    "supply-chain",
+    "crypto"
+  ],
+  "skills": [
+    "./skills/skill-security-audit"
+  ],
+  "icon": "./.claude-plugin/icon.png"
 }

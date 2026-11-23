@@ -1,3 +1,8 @@
+# Scanner source (scan.py)
+
+Write the code block below, exactly as it is, to `/tmp/skill-audit-tools/scan.py`. It reads target files as text only and never runs, imports or installs anything from the skill under audit. The regular expressions below are *detection patterns*: they describe attacks so the scanner can find them.
+
+```python
 #!/usr/bin/env python3
 """skill-audit static triage scanner.
 Reads target files as bytes/text ONLY. Never imports, runs or installs anything from the target.
@@ -118,3 +123,4 @@ if __name__ == '__main__':
     if len(sys.argv) == 4 and sys.argv[1] == '--extract': safe_extract(sys.argv[2], sys.argv[3])
     elif len(sys.argv) == 2: scan(sys.argv[1])
     else: sys.exit(__doc__)
+```

@@ -27,10 +27,9 @@ Write the report in the user's language.
 
 ## Step 2: Run the static triage scanner
 
-The scanner is `scripts/scan.py`, next to this SKILL.md. Copy it out first, then run it:
+The scanner source is in `references/scanner.md`, next to this SKILL.md. Read it and write its code block, exactly as it is, to `/tmp/skill-audit-tools/scan.py` (outside the audit folder). Then run it:
 
 ```bash
-mkdir -p /tmp/skill-audit-tools && cp <this-skill-dir>/scripts/scan.py /tmp/skill-audit-tools/scan.py
 # archives only:
 python3 -I /tmp/skill-audit-tools/scan.py --extract /tmp/audit/<file> /tmp/audit/<name>
 # always:
