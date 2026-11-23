@@ -19,7 +19,12 @@ MEDIA_EXT = {'.png','.jpg','.jpeg','.gif','.webp','.ico','.pdf','.ttf','.otf','.
 AUTO_RUN_NAMES = {'sitecustomize.py','usercustomize.py','conftest.py','setup.py','.npmrc','.pypirc','Makefile',
                   'package.json','pyproject.toml','hooks.json','settings.json','settings.local.json','.mcp.json',
                   'CLAUDE.md','.bashrc','.zshrc','.profile'}
-HIDDEN = re.compile('[\u200b-\u200f\u202a-\u202e\u2060-\u2064\u2066-\u2069\ufeff\U000e0000-\U000e007f\U000e0100-\U000e01ef]')
+# Invisible / direction-override characters to detect, given as code-point numbers so this
+# file itself contains no such characters (nor escape sequences for them).
+_HIDDEN_RANGES = [(0x200B, 0x200F), (0x202A, 0x202E), (0x2060, 0x2064), (0x2066, 0x2069),
+                  (0xFEFF, 0xFEFF), (0xE0000, 0xE007F), (0xE0100, 0xE01EF)]
+HIDDEN = re.compile('[' + ''.join(re.escape(chr(a)) + '-' + re.escape(chr(b)) for a, b in _HIDDEN_RANGES) + ']')
+BOM = chr(0xFEFF)
 
 def r(sev, cat, pat, note):
     return (sev, cat, re.compile(pat, re.I), note)
@@ -107,7 +112,7 @@ def scan(root):
             text = data.decode('utf-8', 'replace')
             urls.update(re.findall(r'https?://[^\s\'"<>)\]`]+', text))
             for i, line in enumerate(text.splitlines(), 1):
-                if HIDDEN.search(line.lstrip('\ufeff') if i == 1 else line): add('HIGH', 'hidden-unicode', rel, i, 'Invisible / bidi-override characters (can hide instructions or code)')
+                if HIDDEN.search(line.lstrip(BOM) if i == 1 else line): add('HIGH', 'hidden-unicode', rel, i, 'Invisible / bidi-override characters (can hide instructions or code)')
                 for sev, cat, rx, note in RULES:
                     if rx.search(line): add(sev, cat, rel, i, f'{note} | {line.strip()[:160]}')
             for m in re.finditer(r'<!--[\s\S]*?-->', text):
