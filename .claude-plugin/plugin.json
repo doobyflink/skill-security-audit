@@ -23,5 +23,8 @@
   "skills": [
     "./skills/skill-security-audit"
   ],
-  "icon": "./.claude-plugin/icon.png"
+  "icon": "./.claude-plugin/icon.png",
+  "documentationUrl": "https://github.com/doobyflink/skill-security-audit#readme",
+  "supportUrl": "https://github.com/doobyflink/skill-security-audit/issues",
+  "privacyPolicyUrl": "https://github.com/doobyflink/skill-security-audit#privacy"
 }

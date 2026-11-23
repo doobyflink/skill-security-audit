@@ -60,6 +60,10 @@ This is a **static review**: it reads code and instructions without running them
 
 This project is provided "as is", without warranty of any kind (see [LICENSE](LICENSE)). It isn't a substitute for professional security review.
 
+## Privacy
+
+This plugin collects no data. It has no server, no analytics and no network calls of its own: it only instructs Claude how to read and judge the files of a skill you give it, inside your own session. Nothing is sent to the author or to any third party.
+
 ## Author
 
 Built by **Dubi Flink**, crypto risk strategist ([OGen Family Office](https://ogen.capital/en)).
