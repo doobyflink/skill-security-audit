@@ -1,0 +1,25 @@
+{
+  "name": "skill-security-audit",
+  "owner": {
+    "name": "Dubi Flink",
+    "url": "https://ogen.capital/en"
+  },
+  "metadata": {
+    "description": "Skill Security Audit: check any Claude skill or plugin for malicious behaviour before installing it.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "skill-security-audit",
+      "source": "./",
+      "description": "Audit any Claude skill or plugin before you install it: malware, backdoors, exfiltration, prompt injection, credential and wallet theft.",
+      "version": "1.0.0",
+      "author": { "name": "Dubi Flink", "url": "https://ogen.capital/en" },
+      "homepage": "https://github.com/doobyflink/skill-security-audit",
+      "repository": "https://github.com/doobyflink/skill-security-audit",
+      "license": "MIT",
+      "category": "security",
+      "keywords": ["security", "audit", "skills", "plugins", "malware", "prompt-injection"]
+    }
+  ]
+}

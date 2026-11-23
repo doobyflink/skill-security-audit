@@ -1,0 +1,15 @@
+{
+  "name": "skill-security-audit",
+  "displayName": "Skill Security Audit",
+  "version": "1.0.0",
+  "description": "Audit any Claude skill or plugin before you install it: scans for malware, backdoors, data exfiltration, prompt injection and credential / crypto-wallet theft, then gives a clear go / caution / no-go verdict.",
+  "author": {
+    "name": "Dubi Flink",
+    "url": "https://ogen.capital/en"
+  },
+  "homepage": "https://github.com/doobyflink/skill-security-audit",
+  "repository": "https://github.com/doobyflink/skill-security-audit",
+  "license": "MIT",
+  "keywords": ["security", "audit", "skills", "plugins", "malware", "prompt-injection", "supply-chain", "crypto"],
+  "skills": ["./skills/skill-security-audit"]
+}
