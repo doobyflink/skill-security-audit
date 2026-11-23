@@ -19,7 +19,7 @@ MEDIA_EXT = {'.png','.jpg','.jpeg','.gif','.webp','.ico','.pdf','.ttf','.otf','.
 AUTO_RUN_NAMES = {'sitecustomize.py','usercustomize.py','conftest.py','setup.py','.npmrc','.pypirc','Makefile',
                   'package.json','pyproject.toml','hooks.json','settings.json','settings.local.json','.mcp.json',
                   'CLAUDE.md','.bashrc','.zshrc','.profile'}
-HIDDEN = re.compile('[\u200b-\u200f\u202a-\u202e\u2060-\u2064\u2066-\u2069\ufeff]')
+HIDDEN = re.compile('[\u200b-\u200f\u202a-\u202e\u2060-\u2064\u2066-\u2069\ufeff\U000e0000-\U000e007f\U000e0100-\U000e01ef]')
 
 def r(sev, cat, pat, note):
     return (sev, cat, re.compile(pat, re.I), note)

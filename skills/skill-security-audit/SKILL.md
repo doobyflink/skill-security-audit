@@ -110,7 +110,7 @@ When in doubt between two levels, choose the stricter one.
 **Source and publisher:** ...
 
 **Recommendation:** <install / don't install / install after removing X>
-⚠️ A static review lowers the risk but can't guarantee 100% safety. Install only from known sources, and re-audit after every update.
+⚠ A static review lowers the risk but can't guarantee 100% safety. Install only from known sources, and re-audit after every update.
 ```
 
 Lead with the verdict. Quote suspicious lines briefly, since they're the user's evidence. If the skill is safe apart from specific lines, offer to produce a cleaned version, and run the full audit again on it before calling it safe.
