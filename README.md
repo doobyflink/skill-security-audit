@@ -60,6 +60,10 @@ This is a **static review**: it reads code and instructions without running them
 
 This project is provided "as is", without warranty of any kind (see [LICENSE](LICENSE)). It isn't a substitute for professional security review.
 
+## Local execution
+
+The plugin ships no executables, hooks or MCP servers. Its skill asks Claude to write a small, dependency-free Python scanner (its full source is in `skills/skill-security-audit/references/scanner.md`) to a temp folder and run it in Claude's own sandbox. The scanner only **reads** the files of the skill under audit. It makes no network calls, writes nothing outside its temp folder, and never runs, imports or installs anything from the audited skill. The scanner's regular expressions describe attack patterns (download-and-run commands, credential paths and so on) so it can detect them, which is why automated scanners may flag this file.
+
 ## Privacy
 
 This plugin collects no data. It has no server, no analytics and no network calls of its own: it only instructs Claude how to read and judge the files of a skill you give it, inside your own session. Nothing is sent to the author or to any third party.
